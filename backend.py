@@ -38,7 +38,7 @@ def run_batch(input_docs, input_images, output_docs, log_func=print):
     return skipped, processed
 
 def extractID(filename):
-    match = re.search(r"(M\d+)", filename)
+    match = re.search(r"([A-Z]\d+)", filename, re.IGNORECASE)
     return match.group(1) if match else None
 
 def collectImagesWithID(image_dir, sample_id):
